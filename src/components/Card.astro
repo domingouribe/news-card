@@ -2,20 +2,38 @@
 import { Image } from "astro:assets";
 import cardImage from "../assets/images/illustration-article.jpg";
 import avatarImage from "../assets/images/image-avatar.jpg";
+interface Props {
+	cardImageAlt: string;
+	category: string;
+	date: string;
+	title: string;
+	description: string;
+	avatarImageAlt: string;
+	author: string;
+}
+
+const {
+	cardImageAlt,
+	category,
+	date,
+	title,
+	description,
+	avatarImageAlt,
+	author,
+} = Astro.props;
 ---
 
 <article class="Card">
-	<img src={cardImage.src} alt="Card Main Picture" class="Card-image" />
-	<span class="Card-category">Learning</span>
-	<small class="Card-date">Published 21 Dec 2023</small>
-	<h1 class="Card-title">HTML & CSS foundations</h1>
+	<img src={cardImage.src} alt={cardImageAlt} class="Card-image" />
+	<span class="Card-category"> {category}</span>
+	<small class="Card-date"> {date}</small>
+	<h1 class="Card-title">{title}</h1>
 	<p class="Card-description">
-		These languages are the blackbone of every website, defining structure,
-		content, and presentation.
+		{description}
 	</p>
 	<div class="Meta">
 		<img src={avatarImage.src} alt="Profile picture" class="Meta-img" />
-		<p class="Meta-author">Greg Hooper</p>
+		<p class="Meta-author">{author}</p>
 	</div>
 </article>
 
