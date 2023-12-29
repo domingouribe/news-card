@@ -12,4 +12,4 @@ Breve descripción de tu proyecto.
 - JavaScript
 
 ## Screenshot
-![Captura de Pantalla]( ![Alt text](public/Screenshot.png) )
+[Project screenshot](public/Screenshot.png) 
