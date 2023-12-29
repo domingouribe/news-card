@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+import cardImage from "../assets/images/illustration-article.jpg";
+import avatarImage from "../assets/images/image-avatar.jpg";
+---
+
+<article class="Card">
+	<img src={cardImage.src} alt="Card Main Picture" class="Card-image" />
+	<span class="Card-category">Learning</span>
+	<small class="Card-date">Published 21 Dec 2023</small>
+	<h2 class="Card-title">HTML & CSS foudations</h2>
+	<p class="Card-description">
+		These languajes are the blackbone of every website, defining structure,
+		content, and presentation.
+	</p>
+	<div class="Meta">
+		<img src={avatarImage.src} alt="Profile picture" class="Meta-img" />
+		<p class="Meta-author">Greg Hooper</p>
+	</div>
+</article>
+
+<style lang="scss">
+	.Card {
+		display: flex;
+		flex-flow: column nowrap;
+		background-color: white;
+		max-width: 20.438em;
+		border-radius: 1.25rem;
+		margin: 1rem;
+		border: solid 1px black;
+		padding: 23px;
+		box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+		transition: 0.1s all ease;
+
+		&:hover {
+			box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 1);
+
+			.Card-title {
+				color: var(--yellow);
+			}
+		}
+		&-image {
+			border-radius: 0.625rem;
+		}
+
+		&-category {
+			padding: 0.4em 1em;
+			background-color: #f5d04eff;
+			display: flex;
+			width: fit-content;
+			border-radius: 5px;
+			font-weight: 800;
+			font-size: 0.9rem;
+			margin: 1.5rem 0 0.5rem 0;
+		}
+
+		&-date {
+			font-size: 1rem;
+			margin: 0.5rem 0 0.75rem 0;
+		}
+
+		&-title {
+			font-weight: 800;
+			font-size: 1.125rem;
+			margin: 0.75rem 0 0.75rem 0;
+			transition: 0.1s all ease;
+		}
+
+		&-description {
+			font-size: 15px;
+			margin: 0.75rem 0 1.25rem 0;
+			color: var(--grey);
+		}
+
+		.Meta {
+			display: flex;
+			gap: 1em;
+			align-items: center;
+			margin-top: 1.25rem;
+
+			&-img {
+				width: 2em;
+				height: 2em;
+				transition: 0.1s all ease;
+			}
+
+			&-author {
+				font-size: 0.813rem;
+				font-weight: 800;
+			}
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.Card {
+			max-width: 23.938em;
+		}
+	}
+</style>

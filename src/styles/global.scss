@@ -1,0 +1,50 @@
+@use './normalize';
+
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 50%);
+    --black: hsl(0, 0%, 7%);
+    --mainFont: 'Figtree Variable',
+        sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.Container {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    display: inherit;
+    flex-flow: inherit inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    align-content: inherit;
+}
+
+body {
+    background-color: var(--yellow);
+    height: 100vh;
+    font-family: var(--mainFont);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: inherit;
+}
+
+
