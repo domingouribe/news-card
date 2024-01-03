@@ -24,15 +24,17 @@ const {
 ---
 
 <article class="Card">
-	<img src={cardImage.src} alt={cardImageAlt} class="Card-image" />
+	<Image src={cardImage} alt={cardImageAlt} class="Card-image" />
 	<span class="Card-category"> {category}</span>
 	<small class="Card-date"> {date}</small>
-	<h1 class="Card-title">{title}</h1>
+	<a href="#" class="Card-title">
+		<h1>{title}</h1>
+	</a>
 	<p class="Card-description">
 		{description}
 	</p>
 	<div class="Meta">
-		<img src={avatarImage.src} alt="Profile picture" class="Meta-img" />
+		<Image src={avatarImage} alt={avatarImageAlt} class="Meta-img" />
 		<p class="Meta-author">{author}</p>
 	</div>
 </article>
@@ -42,59 +44,76 @@ const {
 		display: flex;
 		flex-flow: column nowrap;
 		background-color: white;
-		max-width: 20.438em;
-		border-radius: 1.25rem;
-		margin: 1rem;
+		max-width: 23.9375em;
+		height: 32.5625em;
+		border-radius: 1.25em;
+		margin: 1em;
 		border: solid 1px black;
-		padding: 23px;
-		box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+		padding: 1.5em;
+		box-shadow: 0.5625em 0.5625em 0em 0em rgba(0, 0, 0, 1);
 		transition: 0.1s all ease;
+		gap: 8px;
 
 		&:hover {
-			box-shadow: 16px 16px 0px 0px rgba(0, 0, 0, 1);
+			box-shadow: 1.0625em 1.0625em 0em 0em rgba(0, 0, 0, 1);
 
 			.Card-title {
 				color: var(--yellow);
+				text-decoration: underline;
 			}
 		}
+
 		&-image {
-			border-radius: 0.625rem;
+			border-radius: 0.625em;
+			height: 12.5em;
+			margin: 0 0 0 0;
+			width: 100%;
 		}
 
 		&-category {
-			padding: 0.4em 1em;
-			background-color: #f5d04eff;
+			padding: 0.25em 1em;
+			background-color: var(--yellow);
 			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: fit-content;
-			border-radius: 5px;
+			height: 1.75em;
+			border-radius: 0.3125em;
 			font-weight: 800;
-			font-size: 0.9rem;
-			margin: 1.5rem 0 0.5rem 0;
+			font-size: 0.8125em;
+			margin: 1em 0;
 		}
 
 		&-date {
-			font-size: 1rem;
-			margin: 0.5rem 0 0.75rem 0;
+			font-size: 0.75em;
+			margin: 0 0 0 0;
 		}
 
 		&-title {
 			font-weight: 800;
-			font-size: 1.125rem;
-			margin: 0.75rem 0 0.75rem 0;
 			transition: 0.1s all ease;
+			color: black;
+			text-decoration: none;
+			margin: 12px 0 12px 0;
+
+			h1 {
+				font-size: 1.125em;
+				font-weight: 800;
+				margin: 0 0 0 0;
+			}
 		}
 
 		&-description {
-			font-size: 15px;
-			margin: 0.75rem 0 1.25rem 0;
+			font-size: 0.9375em;
 			color: var(--grey);
+			margin: 0 0 0 0;
 		}
 
 		.Meta {
 			display: flex;
 			gap: 1em;
 			align-items: center;
-			margin-top: 1.25rem;
+			margin-top: 0 0 0 0;
 
 			&-img {
 				width: 2em;
@@ -103,15 +122,15 @@ const {
 			}
 
 			&-author {
-				font-size: 0.813rem;
+				font-size: 0.813em;
 				font-weight: 800;
 			}
 		}
 	}
 
-	@media (min-width: 1440px) {
+	@media (max-width: 375px) {
 		.Card {
-			max-width: 23.938em;
+			max-width: 326px;
 		}
 	}
 </style>

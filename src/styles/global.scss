@@ -1,12 +1,23 @@
 @use './normalize';
 
 :root {
+
+    //Colors
     --yellow: hsl(47, 88%, 63%);
     --white: hsl(0, 0%, 100%);
     --grey: hsl(0, 0%, 50%);
     --black: hsl(0, 0%, 7%);
-    --mainFont: 'Figtree Variable',
-        sans-serif;
+    --mainFont: 'Figtree Variable', sans-serif;
+
+    //Radious
+    --round-sm: 4px;
+    --round-mm: 8px;
+    --round-l: 12px;
+    --round-xl: 16px;
+    --round-xxl: 20px;
+
+    //Containers
+    --container-md: 1024px;
 }
 
 html {
@@ -22,13 +33,14 @@ html {
 
 .Container {
     width: 100%;
-    max-width: 1024px;
+    max-width: var(--container-md);
     margin: auto;
     display: inherit;
     flex-flow: inherit inherit;
     justify-content: inherit;
     align-items: inherit;
     align-content: inherit;
+    font-size: inherit;
 }
 
 body {
